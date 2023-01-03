@@ -1,11 +1,7 @@
-﻿string message = "What is the value <span>between the tags</span>?";
+﻿string message = "(What if) I am (only interested) in the last (set of parentheses)?";
+int openingPosition = message.LastIndexOf('(');
 
-const string openSpan = "<span>";
-const string closeSpan = "</span>";
-
-int openingPosition = message.IndexOf(openSpan);
-int closingPosition = message.IndexOf(closeSpan);
-
-openingPosition += openSpan.Length;
+openingPosition += 1;
+int closingPosition = message.LastIndexOf(')');
 int length = closingPosition - openingPosition;
 Console.WriteLine(message.Substring(openingPosition, length));
